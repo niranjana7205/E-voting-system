@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Voting System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>E-Voting System</h1>
+
+    <!-- Login Form -->
+    <div class="card" id="login-section">
+      <h2>Login</h2>
+      <form>
+        <label for="voter-id">Voter ID</label>
+        <input type="text" id="voter-id" placeholder="Enter your Voter ID" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+
+        <button type="button" onclick="showVotingForm()">Login</button>
+      </form>
+    </div>
+
+    <!-- Voting Form -->
+    <div class="card hidden" id="vote-section">
+      <h2>Cast Your Vote</h2>
+      <form>
+        <label>Select Your Candidate:</label>
+        <div class="candidates">
+          <label><input type="radio" name="candidate" value="Alice" required /> Alice Johnson</label>
+          <label><input type="radio" name="candidate" value="Bob" /> Bob Smith</label>
+          <label><input type="radio" name="candidate" value="Charlie" /> Charlie Brown</label>
+        </div>
+        <button type="submit">Submit Vote</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function showVotingForm() {
+      document.getElementById('login-section').classList.add('hidden');
+      document.getElementById('vote-section').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
